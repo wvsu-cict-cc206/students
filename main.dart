@@ -1,54 +1,31 @@
 import 'dart:io';
 
 void main() {
-  Person p1 = Person('Jane','Alba', 25);
-  print(p1.getFullName());
-  print(Person.getInfo());
-  Person p2 = Person.withLNandAgeOnly('Villaruel', 23);
-  print(p2.getFullName());
-
-  print("Enter First Name: ");
+  print("Enter first name: ");
   String fn = stdin.readLineSync();
-  print("Enter Last Name: ");
+
+  print("Enter middle name: ");
+  String mn = stdin.readLineSync();
+
+  print("Enter last name: ");
   String ln = stdin.readLineSync();
-  print("Enter Age: ");
-  String strAge = stdin.readLineSync();
-  int age = int.parse(strAge);
-  Person p3 = Person(fn,ln,age);
-  print(p3.getFullName());
+
+  print("Enter age ");
+  int age = int.parse(stdin.readLineSync());
+
+  Student stu = Student(fn, mn, ln, age);
+
+  print(stu.getFullDetails());
 }
 
-class Person {
-  static String company = 'ABC Company';
-  String firstName, lastName;
-  int age = 18;
-  String _dept;
+class Student {
+  String firstName, middleName, lastName;
+  int age;
+  static final String department = "Computer Science";
 
-  String get dept => _dept;
+  Student(this.firstName, this.middleName, this.lastName, this.age);
 
-  Person(this.firstName, this.lastName, this.age);
-
-  //named constructor
-  Person.withLNandAgeOnly(this.lastName, this.age);
-
-  //Person p = Person();
-  //p.getFullName();
-  String getFullName() {
-    return ("$firstName $lastName age is $age");
-  }
-
-  //Person.getInfo()
-  static String getInfo() {
-    return 'This is a Person class';
-  }
-
-  //
-  @override
-  String toString() {
-    return lastName;
-  }
-
-  void setLastName(String lastName) {
-    this.lastName = lastName;
+  String getFullDetails() {
+    return ("Hello $firstName $middleName $lastName, $age, from $department department");
   }
 }
