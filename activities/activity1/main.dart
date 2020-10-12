@@ -1,54 +1,26 @@
 import 'dart:io';
 
-void main() {
-  Person p1 = Person('Jane','Alba', 25);
-  print(p1.getFullName());
-  print(Person.getInfo());
-  Person p2 = Person.withLNandAgeOnly('Villaruel', 23);
-  print(p2.getFullName());
-
-  print("Enter First Name: ");
-  String fn = stdin.readLineSync();
-  print("Enter Last Name: ");
-  String ln = stdin.readLineSync();
-  print("Enter Age: ");
-  String strAge = stdin.readLineSync();
-  int age = int.parse(strAge);
-  Person p3 = Person(fn,ln,age);
-  print(p3.getFullName());
+void main(){
+  print('Enter First Name: ');
+  String first = stdin.readLineSync();
+  print('Enter Middle Name: ');
+  String mid = stdin.readLineSync();
+  print('Enter Last Name: ');
+  String last = stdin.readLineSync();
+  print('Enter Age: ');
+  String agee = stdin.readLineSync();
+  var ageint = int.parse(agee);
+  Student s = Student(first, mid, last, ageint);
+  print(s.getFullName());
 }
+class Student{
+  String fn, mn, ln;
+  int age;
+  static final String department = 'Computer Science';
 
-class Person {
-  static String company = 'ABC Company';
-  String firstName, lastName;
-  int age = 18;
-  String _dept;
+  Student(this.fn, this.mn, this.ln, this.age);
 
-  String get dept => _dept;
-
-  Person(this.firstName, this.lastName, this.age);
-
-  //named constructor
-  Person.withLNandAgeOnly(this.lastName, this.age);
-
-  //Person p = Person();
-  //p.getFullName();
-  String getFullName() {
-    return ("$firstName $lastName age is $age");
-  }
-
-  //Person.getInfo()
-  static String getInfo() {
-    return 'This is a Person class';
-  }
-
-  //
-  @override
-  String toString() {
-    return lastName;
-  }
-
-  void setLastName(String lastName) {
-    this.lastName = lastName;
+  String getFullName(){
+    return ('Hello $fn $mn $ln, $age, from $department department.'); 
   }
 }
