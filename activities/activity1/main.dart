@@ -36,26 +36,25 @@ class Student {
   Person(this.firstName, this.lastName, this.age);
   Student(this.firstName, this.middleName, this.lastName, this.age);
 
-  //named constructor
+  
   Person.withLNandAgeOnly(this.lastName, this.age);
   Student.withLNandAgeOnly(this.lastName, this.age);
 
-  //Person p = Person();
-  //p.getFullName();
+  
   String getFullName() {
     return ("$firstName $lastName age is $age");
     return ("Hello $firstName $middleName $lastName, $age, from $department department");
   }
 
-  //Person.getInfo()
+  
   static String getInfo() {
     return 'This is a Person class';
   }
 
-  //
+  
   @override
   String toString() {
-@@ -51,4 +42,4 @@ class Person {
+  class Person {
   void setLastName(String lastName) {
     this.lastName = lastName;
   }
