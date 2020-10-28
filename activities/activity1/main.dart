@@ -21,12 +21,17 @@ void main() {
 class Person {
   static String company = 'ABC Company';
   String firstName, lastName;
-  int age = 18;
-  String _dept;
 
+  class Student {
+    static String department = "Computer Science";
+    String firstName, lastName, midName;
+    int age = 18;
+    String _dept;
+  
   String get dept => _dept;
 
   Person(this.firstName, this.lastName, this.age);
+  Student (this.firstName, this.midName, this.lastName, this.age)
 
   //named constructor
   Person.withLNandAgeOnly(this.lastName, this.age);
@@ -51,4 +56,5 @@ class Person {
   void setLastName(String lastName) {
     this.lastName = lastName;
   }
+}
 }
