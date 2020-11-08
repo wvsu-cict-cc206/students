@@ -1,0 +1,12 @@
+void main() {
+
+  var pizzaPrices = new Map();
+  pizzaPrices['pepperoni']  = 7.5;
+  pizzaPrices['vegetarian']  = 6.5;
+  pizzaPrices['margherita'] = 5.5;
+
+  double examplePrice = pizzaPrices['pepperoni'] + pizzaPrices['margherita'];
+  String converted = "$examplePrice";
+  
+  print("Total: \$" + converted);
+}
