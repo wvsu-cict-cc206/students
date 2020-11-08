@@ -1,0 +1,12 @@
+
+void main(){
+  const a = { 1, 3};
+  const b = { 3, 5};
+
+  var ab = a.difference(b);
+  var ba = b.difference(a);
+  var c = ab.union(ba);
+  print(c);
+  print(c.reduce((q, w) => q + w));
+  
+}
