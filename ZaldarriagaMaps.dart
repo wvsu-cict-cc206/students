@@ -12,6 +12,18 @@ void main() {
   
   print('Welcome to Jez Pizza');
   print(pizzaPrices);
+
+ /* const ordar={'margherita', 'pineapple'};
+  double tots =0;
+  ordar.forEach((element) {
+    if (pizzaPrices.containsKey(element)){
+      tots = tots + pizzaPrices[element];
+    }
+    else{
+      print("pizza Doesn't exist");
+    }
+   });
+*/
   /*print('What is your order?');
   String x = stdin.readLineSync();
   x.toLowerCase();
