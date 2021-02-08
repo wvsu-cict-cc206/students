@@ -1,1 +1,31 @@
-Activities here
+void main() {
+  print("Exercise: Pizza Ordering (Map Exercise)");
+  const pizzaPrices = {
+    'margherita': 5.5,
+    'pepperoni': 7.5,
+    'vegetarian': 6.5,
+  };
+  const order = ['margherita', 'pepperoni', 'pineapple'];
+  var total = 0.0;
+  for (var item in order) {
+    final price = pizzaPrices[item];
+    if (price != null) {
+      total += price;
+    } else {
+      print('$item pizza is not on the menu');
+    }
+  }
+  print('Total: \$$total');
+
+  print("\r\n-------------------------");
+  print("Exercise: Sets (Set Exercise)");
+  const a = {1, 3};
+  const b = {3, 5};
+  final c = a.union(b).difference(a.intersection(b));
+  print(c);
+  var sum = 0;
+  for (var value in c) {
+    sum += value;
+  }
+  print('Sum of numbers in the set is $sum');
+}
